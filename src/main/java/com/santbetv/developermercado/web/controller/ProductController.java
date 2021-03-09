@@ -31,8 +31,6 @@ public class ProductController {
 	}
 
 	@GetMapping("/all")
-//    @ApiOperation(value = "Get all supermarket products", authorizations = { @Authorization(value="JWT") })
-//    @ApiResponse(code = 200, message = "OK")
     public ResponseEntity<List<Product>> getAll() {
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }

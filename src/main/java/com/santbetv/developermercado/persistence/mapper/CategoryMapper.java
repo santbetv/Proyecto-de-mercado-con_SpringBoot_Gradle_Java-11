@@ -14,7 +14,8 @@ public interface CategoryMapper {
 
 	// Generamos la conversion de la entity en persitence al dominio category
 	@Mappings({ @Mapping(source = "idCategoria", target = "categoryId"),
-			@Mapping(source = "descripcion", target = "category"), @Mapping(source = "estado", target = "active"), })
+			@Mapping(source = "descripcion", target = "category"), 
+			@Mapping(source = "estado", target = "active"), })
 	Category toCategory(Categoria categoria);
 
 	// Anotacion que indica que la conversion es al inversa

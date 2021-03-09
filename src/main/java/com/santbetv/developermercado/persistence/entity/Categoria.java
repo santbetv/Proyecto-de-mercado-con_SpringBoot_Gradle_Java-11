@@ -38,7 +38,13 @@ public class Categoria {
         return idCategoria;
     }
 
-    public String getDescripcion() {
+    public void setIdCategoria(Integer idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+
+
+	public String getDescripcion() {
         return descripcion;
     }
 
