@@ -20,16 +20,16 @@ public class SwaggerConfig {
 	@Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
-                //.securitySchemes(Arrays.asList(apiKey()))
+                .securitySchemes(Arrays.asList(apiKey()))
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.santbetv.developermercado.web.controller"))
                 .build()
                 .apiInfo(apiEndPointinfo());
     }
 
-//    private ApiKey apiKey() {
-//        return new ApiKey("JWT", "Authorization", "header");
-//    }
+    private ApiKey apiKey() {
+        return new ApiKey("JWT", "Authorization", "header");
+    }
 
 	
 	private ApiInfo apiEndPointinfo() {
