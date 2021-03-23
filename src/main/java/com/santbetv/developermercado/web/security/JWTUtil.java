@@ -23,7 +23,7 @@ public class JWTUtil {
 
 	
 	/**
-	 * Metodo que me permite validar si es correcto.
+	 * Metodo que me permite validar si el TOKEN es correcto.
 	 * 
 	 * @param token
 	 * @param userDetails
@@ -41,10 +41,11 @@ public class JWTUtil {
 
     //validar si la fecha de expiracion esta corarrecta
     public boolean isTokenExpired(String token) {
-        return getClaims(token).getExpiration().before(new Date());
+        return getClaims(token).getExpiration().before(new Date());//si esta antes de la fecha actual
     }
     
-    //extrer los claims para validar valida la firma si esta ok
+    //extrer los claims, para validar, valida la firma si esta ok
+    //y devuelve la informacion de token 
     private Claims getClaims(String token) {
         return Jwts.parser().setSigningKey(KEY).parseClaimsJws(token).getBody();
     }

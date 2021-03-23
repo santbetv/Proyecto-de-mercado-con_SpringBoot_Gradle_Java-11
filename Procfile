@@ -1,0 +1,1 @@
+web: java -jar -Dspring.profiles.active=pdn ./build/libs/developer-mercado-0.0.1-SNAPSHOT.jar
